@@ -1,14 +1,14 @@
 <?php
 
 
-namespace Pyz\Zed\AntelopeSearch\Business;
+namespace Pyz\Zed\AntelopeStorage\Business;
 
 use Spryker\Zed\Kernel\Business\AbstractFacade;
 
 /**
- * @method \Pyz\Zed\AntelopeSearch\Business\AntelopeSearchBusinessFactory getFactory()
+ * @method \Pyz\Zed\AntelopeStorage\Business\AntelopeStorageBusinessFactory getFactory()
  */
-class AntelopeSearchFacade extends AbstractFacade implements AntelopeSearchFacadeInterface
+class AntelopeStorageFacade extends AbstractFacade implements AntelopeStorageFacadeInterface
 {
     /**
      * {@inheritDoc}
@@ -22,7 +22,7 @@ class AntelopeSearchFacade extends AbstractFacade implements AntelopeSearchFacad
     public function writeCollectionByAntelopeEvents(array $eventTransfers): void
     {
         $this->getFactory()
-            ->createAntelopeSearchWriter()
+            ->createAntelopeStorageWriter()
             ->writeCollectionByAntelopeEvents($eventTransfers);
     }
 }

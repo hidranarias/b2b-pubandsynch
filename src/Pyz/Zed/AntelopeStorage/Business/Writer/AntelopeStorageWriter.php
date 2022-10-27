@@ -1,21 +1,25 @@
 <?php
 
 
-namespace Pyz\Zed\AntelopeSearch\Business\Writer;
+namespace Pyz\Zed\AntelopeStorage\Business\Writer;
 
 use Orm\Zed\Antelope\Persistence\PyzAntelopeQuery;
-use Orm\Zed\AntelopeSearch\Persistence\PyzAntelopeSearchQuery;
+use Orm\Zed\AntelopeStorage\Persistence\PyzAntelopeStorageQuery;
+use Spryker\Client\Storage\StorageClient;
+use Spryker\Client\Store\StoreClient;
 use Spryker\Zed\EventBehavior\Business\EventBehaviorFacadeInterface;
 
-class AntelopeSearchWriter
+class AntelopeStorageWriter
 {
     protected EventBehaviorFacadeInterface $eventBehaviorFacade;
-
+  protected  StoreClient $storeClient;
     public function __construct(
-        EventBehaviorFacadeInterface $eventBehaviorFacade
+        EventBehaviorFacadeInterface $eventBehaviorFacade,
+        StoreClient  $storeClient
     )
     {
         $this->eventBehaviorFacade = $eventBehaviorFacade;
+        $this->storeClient = $storeClient;
     }
 
     public function writeCollectionByAntelopeEvents(array $eventTransfers): void
@@ -40,13 +44,15 @@ class AntelopeSearchWriter
                 ->filterByIdAntelope($antelopeId)
                 ->findOne();
 
-            $searchEntity = PyzAntelopeSearchQuery::create()
+            $searchEntity = PyzAntelopeStorageQuery::create()
                 ->filterByFkAntelope($antelopeId)
                 ->findOneOrCreate();
             $searchEntity->setFkAntelope($antelopeId);
 
             $searchData = $antelopeEntity->toArray();
             $searchEntity->setData($searchData);
+            $searchEntity->setStore($this->storeClient->getCurrentStore()->getName());
+
 
             $searchEntity->save();
         }

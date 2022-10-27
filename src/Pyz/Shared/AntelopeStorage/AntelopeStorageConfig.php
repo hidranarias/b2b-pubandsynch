@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Pyz\Shared\AntelopeSearch;
+namespace Pyz\Shared\AntelopeStorage;
 
 use Spryker\Shared\Kernel\AbstractBundleConfig;
 
-class AntelopeSearchConfig extends AbstractBundleConfig
+class AntelopeStorageConfig extends AbstractBundleConfig
 {
     /**
      * Specification:
@@ -15,25 +15,8 @@ class AntelopeSearchConfig extends AbstractBundleConfig
      *
      * @var string
      */
-    public const ANTELOPE_PUBLISH_SEARCH_QUEUE = 'publish.search.antelope';
-    /**
-     * Specification:
-     * - Defines queue name as used for processing antelope publish messages.
-     *
-     * @api
-     *
-     * @var string
-     */
     public const ANTELOPE_PUBLISH_STORAGE_QUEUE = 'publish.storage.antelope';
-    /**
-     * Specification:
-     * - Defines queue name as used for processing antelope sync messages.
-     *
-     * @api
-     *
-     * @var string
-     */
-    public const ANTELOPE_SYNC_SEARCH_QUEUE = 'sync.search.antelope';
+
     /**
      * Specification:
      * - Defines queue name as used for processing antelope sync messages.
@@ -43,6 +26,7 @@ class AntelopeSearchConfig extends AbstractBundleConfig
      * @var string
      */
     public const ANTELOPE_SYNC_STORAGE_QUEUE = 'sync.storage.antelope';
+
     /**
      * Specification:
      * - Represents pyz_antelope entity creation event.
@@ -81,7 +65,7 @@ class AntelopeSearchConfig extends AbstractBundleConfig
      *
      * @var string
      */
-    public const ANTELOPE_PUBLISH = 'AntelopeSearch.antelope.publish';
+    public const ANTELOPE_PUBLISH = 'AntelopeStorage.antelope.publish';
 
     /**
      * Specification:
@@ -89,5 +73,5 @@ class AntelopeSearchConfig extends AbstractBundleConfig
      *
      * @api
      */
-    public const ANTELOPE_UNPUBLISH = 'AntelopeSearch.antelope.unpublish';
+    public const ANTELOPE_UNPUBLISH = 'AntelopeStorage.antelope.unpublish';
 }

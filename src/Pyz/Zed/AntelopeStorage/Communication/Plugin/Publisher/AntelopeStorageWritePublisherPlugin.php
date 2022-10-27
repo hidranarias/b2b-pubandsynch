@@ -1,15 +1,16 @@
 <?php
 
-namespace Pyz\Zed\AntelopeSearch\Communication\Plugin\Publisher;
+namespace Pyz\Zed\AntelopeStorage\Communication\Plugin\Publisher;
 
-use Pyz\Shared\AntelopeSearch\AntelopeSearchConfig;
+
+use Pyz\Shared\AntelopeStorage\AntelopeStorageConfig;
 use Spryker\Zed\Kernel\Communication\AbstractPlugin;
 use Spryker\Zed\PublisherExtension\Dependency\Plugin\PublisherPluginInterface;
 
 /**
- * @method \Pyz\Zed\AntelopeSearch\Business\AntelopeSearchFacadeInterface getFacade()
+ * @method \Pyz\Zed\AntelopeStorage\Business\AntelopeStorageFacadeInterface getFacade()
  */
-class AntelopeWritePublisherPlugin extends AbstractPlugin implements PublisherPluginInterface
+class AntelopeStorageWritePublisherPlugin extends AbstractPlugin implements PublisherPluginInterface
 {
     /**
      * {@inheritDoc}
@@ -37,10 +38,10 @@ class AntelopeWritePublisherPlugin extends AbstractPlugin implements PublisherPl
     public function getSubscribedEvents(): array
     {
         return [
-            AntelopeSearchConfig::ANTELOPE_PUBLISH,
-            AntelopeSearchConfig::ENTITY_PYZ_ANTELOPE_CREATE,
-            AntelopeSearchConfig::ENTITY_PYZ_ANTELOPE_UPDATE,
-            AntelopeSearchConfig::ENTITY_PYZ_ANTELOPE_DELETE
+            AntelopeStorageConfig::ANTELOPE_PUBLISH,
+            AntelopeStorageConfig::ENTITY_PYZ_ANTELOPE_CREATE,
+            AntelopeStorageConfig::ENTITY_PYZ_ANTELOPE_UPDATE,
+            AntelopeStorageConfig::ENTITY_PYZ_ANTELOPE_DELETE
         ];
     }
 }

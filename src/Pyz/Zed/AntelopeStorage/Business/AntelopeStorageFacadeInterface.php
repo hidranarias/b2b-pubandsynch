@@ -1,9 +1,9 @@
 <?php
 
 
-namespace Pyz\Zed\AntelopeSearch\Business;
+namespace Pyz\Zed\AntelopeStorage\Business;
 
-interface AntelopeSearchFacadeInterface
+interface AntelopeStorageFacadeInterface
 {
     /**
      * Specification:

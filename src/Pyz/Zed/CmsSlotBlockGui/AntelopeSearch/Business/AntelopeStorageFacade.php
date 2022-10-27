@@ -6,9 +6,9 @@ namespace Pyz\Zed\AntelopeSearch\Business;
 use Spryker\Zed\Kernel\Business\AbstractFacade;
 
 /**
- * @method \Pyz\Zed\AntelopeSearch\Business\AntelopeSearchBusinessFactory getFactory()
+ * @method \Pyz\Zed\AntelopeSearch\Business\AntelopeStorageBusinessFactory getFactory()
  */
-class AntelopeSearchFacade extends AbstractFacade implements AntelopeSearchFacadeInterface
+class AntelopeStorageFacade extends AbstractFacade implements AntelopeStorageFacadeInterface
 {
     /**
      * {@inheritDoc}

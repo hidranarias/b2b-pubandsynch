@@ -4,7 +4,7 @@
 namespace Pyz\Zed\AntelopeSearch\Business;
 
 use Pyz\Zed\AntelopeSearch\AntelopeSearchDependencyProvider;
-use Pyz\Zed\AntelopeSearch\Business\Writer\AntelopeSearchWriter;
+use Pyz\Zed\AntelopeSearch\Business\Writer\AntelopeStorageWriter;
 use Spryker\Zed\EventBehavior\Business\EventBehaviorFacadeInterface;
 use Spryker\Zed\Kernel\Business\AbstractBusinessFactory;
 
@@ -12,7 +12,7 @@ class AntelopeSearchBusinessFactory extends AbstractBusinessFactory
 {
     public function createAntelopeSearchWriter()
     {
-        return new AntelopeSearchWriter(
+        return new AntelopeStorageWriter(
             $this->getEventBehaviorFacade()
         );
     }

@@ -8,7 +8,9 @@
 namespace Pyz\Zed\Publisher;
 
 use Pyz\Shared\AntelopeSearch\AntelopeSearchConfig;
+use Pyz\Shared\AntelopeStorage\AntelopeStorageConfig;
 use Pyz\Zed\AntelopeSearch\Communication\Plugin\Publisher\AntelopeWritePublisherPlugin;
+use Pyz\Zed\AntelopeStorage\Communication\Plugin\Publisher\AntelopeStorageWritePublisherPlugin;
 use Spryker\Shared\GlossaryStorage\GlossaryStorageConfig;
 use Spryker\Shared\PublishAndSynchronizeHealthCheck\PublishAndSynchronizeHealthCheckConfig;
 use Spryker\Zed\AssetStorage\Communication\Plugin\Publisher\Asset\AssetDeletePublisherPlugin;
@@ -103,6 +105,7 @@ class PublisherDependencyProvider extends SprykerPublisherDependencyProvider
             $this->getPriceProductMerchantRelationshipStoragePlugins(),
             $this->getAssetStoragePlugins(),
             $this->getAntelopeSearchPlugins(),
+            $this->getAntelopeStoragePlugins(),
         );
     }
 
@@ -300,6 +303,14 @@ class PublisherDependencyProvider extends SprykerPublisherDependencyProvider
         return [
             AntelopeSearchConfig::ANTELOPE_PUBLISH_SEARCH_QUEUE => [
                 new AntelopeWritePublisherPlugin(),
+            ],
+        ];
+    }
+    protected function getAntelopeStoragePlugins(): array
+    {
+        return [
+            AntelopeStorageConfig::ANTELOPE_PUBLISH_STORAGE_QUEUE => [
+                new AntelopeStorageWritePublisherPlugin(),
             ],
         ];
     }

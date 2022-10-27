@@ -7,7 +7,7 @@ use Spryker\Zed\Kernel\Communication\AbstractPlugin;
 use Spryker\Zed\PublisherExtension\Dependency\Plugin\PublisherPluginInterface;
 
 /**
- * @method \Pyz\Zed\AntelopeSearch\Business\AntelopeSearchFacadeInterface getFacade()
+ * @method \Pyz\Zed\AntelopeSearch\Business\AntelopeStorageFacadeInterface getFacade()
  */
 class AntelopeWritePublisherPlugin extends AbstractPlugin implements PublisherPluginInterface
 {
