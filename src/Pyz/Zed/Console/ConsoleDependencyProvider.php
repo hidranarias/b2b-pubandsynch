@@ -7,6 +7,7 @@
 
 namespace Pyz\Zed\Console;
 
+use Pyz\Zed\AntelopeDataImport\AntelopeDataImportConfig;
 use Pyz\Zed\DataImport\DataImportConfig;
 use Pyz\Zed\Development\Communication\Console\AcceptanceCodeTestConsole;
 use Pyz\Zed\Development\Communication\Console\ApiCodeTestConsole;
@@ -279,6 +280,7 @@ class ConsoleDependencyProvider extends SprykerConsoleDependencyProvider
             new DataImportConsole(DataImportConsole::DEFAULT_NAME . static::PYZ_COMMAND_SEPARATOR . PaymentDataImportConfig::IMPORT_TYPE_PAYMENT_METHOD),
             new DataImportConsole(DataImportConsole::DEFAULT_NAME . static::PYZ_COMMAND_SEPARATOR . PaymentDataImportConfig::IMPORT_TYPE_PAYMENT_METHOD_STORE),
             new DataImportConsole(DataImportConsole::DEFAULT_NAME . static::PYZ_COMMAND_SEPARATOR . ContentNavigationDataImportConfig::IMPORT_TYPE_CONTENT_NAVIGATION),
+            new DataImportConsole(DataImportConsole::DEFAULT_NAME . static::PYZ_COMMAND_SEPARATOR . AntelopeDataImportConfig::IMPORT_TYPE_ANTELOPE),
 
             // Publish and Synchronization
             new EventBehaviorTriggerTimeoutConsole(),
